@@ -21,6 +21,7 @@ public class QueueConsumer {
             channel.basicAck(deliveryTag, false);
             System.out.println("Consumindo mensagem: ");
             System.out.println(mensagem.toString());
+            System.out.println("DELIVERY_TAG: "+ deliveryTag );
 
         }catch(Exception ex){
             channel.basicNack(deliveryTag, false, true); // Requeue the message

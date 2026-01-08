@@ -23,7 +23,7 @@ public class QueueSender {
 
     public void send(UsuarioDto message){
         UserRecord userRecord = new UserRecord(IdIncremento++, message.getNome(), message.getTelefone());
-        System.out.println("Sending message : " + userRecord.toString());
+        System.out.println("Sending message  : " + userRecord.toString());
         rabbitTemplate.convertAndSend(this.queue.getName(),  userRecord);
     }
 
